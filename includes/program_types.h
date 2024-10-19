@@ -27,7 +27,10 @@ typedef bool					witch;
 
 typedef struct s_program
 {	
-	int *line_no;
+	i_P 		*line_no;
+	i_P			cursor_x;
+	i_P			cursor_y;
+	Rectangle 	boxes[GRID_ROWS][GRID_COLS];
 
 } t_program;
 

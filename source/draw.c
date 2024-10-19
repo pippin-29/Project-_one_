@@ -11,32 +11,21 @@
 #include "../includes/program.h"
 #include "../includes/raygui.h"
 
-none	init_line_no(t_program *c)
-{
-	i_P	ra;
 
-	ra = _A;
-	c->line_no = malloc(sizeof(int) * P_);
-	if (!c->line_no)
-		ERROR_MEM(c);
-	while (ra < ENDSET)
-	{
-		c->line_no[ra - _A] = ra;
-		ra++;
-	}
-}
 
 void	draw__one_(t_program *c)
 {
 	ClearBackground(CLITERAL(Color){126, 126, 196, 96});
 	DrawText("Project _one_", 1024 / 2, 8, 24, CLITERAL(Color){0, 0, 196, 96});
-	DrawRectangleRounded((Rectangle){1000, 32, 24, 18 * 32}, 0.05f, 15, BLACK);
-	DrawRectangleRounded((Rectangle){0, 32, 1000, 18 * 32}, 0.01f, 15, RAYWHITE);
-	
+
+	DrawRectangleRounded((Rectangle){8, 32, 944, 18 * 32}, 0.01f, 15, RAYWHITE);
+	DrawText(TextFormat("Column: %3d", c->cursor_x), 8, md_val("P_19"), 16, CLITERAL(Color){0, 0, 196, 96});
+	DrawText(TextFormat("Row: %3d", c->cursor_y), 8, md_val("_P20"), 16, CLITERAL(Color){0, 0, 196, 96});
 	
 	draw_line_numbers(c);
 	draw_buttons(c);
-
+	draw_boxes(c);
+	
 }
 
 void	draw_line_numbers(t_program *c)
@@ -57,16 +46,6 @@ void	draw_line_numbers(t_program *c)
 		i++;
 	}
 }
-
-// void	draw_column_cursor_location(t_program *c)
-// {
-
-// }
-
-// void	draw_row_cursor_location(t_program *c)
-// {
-	
-// }
 
 void	draw_buttons(t_program *c)
 {
@@ -91,4 +70,25 @@ void	draw_buttons(t_program *c)
 
 	}
 
+	
+
+}
+
+none draw_boxes(t_program *c)
+{
+	i_P row;
+	i_P col;
+
+	row = 0;
+	while (row < GRID_ROWS)
+	{
+		col = 0;
+		while (col < GRID_COLS)
+		{
+			DrawRectangleRounded(c->boxes[row][col], 0.0f, 5, CLITERAL(Color){0, 0, 0, 96});
+			GuiDrawText("B", c->boxes[row][col], 1, BLACK);
+			col++;
+		}
+		row++;
+	}
 }

@@ -13,7 +13,12 @@
 #define	RAYGUI_IMPLEMENTATION
 #define MEMORY_ALLOCATION_ERROR 12
 
-
+#define BOX_WIDTH  7
+#define BOX_HEIGHT 18
+#define OFFSET_X   56
+#define OFFSET_Y   32
+#define GRID_ROWS  32
+#define GRID_COLS  128
 
 // MD_SET MACROS
 #define _A		  1
