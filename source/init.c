@@ -13,7 +13,7 @@
 
 void init_(t_program *c)
 {
-	InitWindow(1024, 768, "Project_One");
+	InitWindow(RES_X, RES_Y, "Project _one_");
 	c->cursor_x = 1;
 	c->cursor_y = 1;
 	init_line_no(c);

@@ -18,9 +18,9 @@ void	draw__one_(t_program *c)
 	ClearBackground(CLITERAL(Color){126, 126, 196, 96});
 	DrawText("Project _one_", 1024 / 2, 8, 24, CLITERAL(Color){0, 0, 196, 96});
 
-	DrawRectangleRounded((Rectangle){8, 32, 944, 18 * 32}, 0.01f, 15, RAYWHITE);
-	DrawText(TextFormat("Column: %3d", c->cursor_x), 8, md_val("P_19"), 16, CLITERAL(Color){0, 0, 196, 96});
-	DrawText(TextFormat("Row: %3d", c->cursor_y), 8, md_val("_P20"), 16, CLITERAL(Color){0, 0, 196, 96});
+	DrawRectangleRounded((Rectangle){0, 32, 944, 18 * 32}, 0.01f, 15, RAYWHITE);
+	DrawText(TextFormat("Column: %3d", c->cursor_x), 0, md_val("P_19"), 16, CLITERAL(Color){0, 0, 196, 96});
+	DrawText(TextFormat("Row: %3d", c->cursor_y), 0, md_val("_P20"), 16, CLITERAL(Color){0, 0, 196, 96});
 	
 	draw_line_numbers(c);
 	draw_buttons(c);
@@ -34,7 +34,7 @@ void	draw_line_numbers(t_program *c)
 
 	line_no_rect.height = 18;
 	line_no_rect.width = 48;
-	line_no_rect.x = 8;
+	line_no_rect.x = 0;
 	line_no_rect.y = 32;
 
 	int i;
@@ -49,29 +49,10 @@ void	draw_line_numbers(t_program *c)
 
 void	draw_buttons(t_program *c)
 {
-	if (GuiButton((Rectangle){1024 - 75, md_val("P_19"), 75, 32}, "NPAGE"))
+	if (GuiButton((Rectangle){0, 0, 75, 32}, "SAVEF"))
 	{
 
 	}
-	if (GuiButton((Rectangle){1024 - 75, md_val("P_20"), 75, 32}, "PPAGE"))
-	{
-
-	}
-	if (GuiButton((Rectangle){1024 - 75, md_val("P_21"), 75, 32}, "NVERS"))
-	{
-
-	}
-	if (GuiButton((Rectangle){1024 - 75, md_val("P_22"), 75, 32}, "PVERS"))
-	{
-
-	}
-	if (GuiButton((Rectangle){1024 - 75, md_val("P_23"), 75, 32}, "SAVEF"))
-	{
-
-	}
-
-	
-
 }
 
 none draw_boxes(t_program *c)
