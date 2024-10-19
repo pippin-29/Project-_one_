@@ -19,6 +19,7 @@ t_cleanup_function	cleanup(t_program *c);
 // DRAW_C
 void	draw__one_(t_program *c);
 void	draw_line_numbers(t_program *c);
+void	draw_buttons(t_program *c);
 
 
 

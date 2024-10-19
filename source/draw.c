@@ -35,24 +35,60 @@ void	draw__one_(t_program *c)
 	
 	
 	draw_line_numbers(c);
+	draw_buttons(c);
 
 }
 
 void	draw_line_numbers(t_program *c)
 {
-	Rectangle lineNumberRect;
+	Rectangle line_no_rect;
 
-	lineNumberRect.height = 18;
-	lineNumberRect.width = 48;
-	lineNumberRect.x = 8;
-	lineNumberRect.y = 32;
+	line_no_rect.height = 18;
+	line_no_rect.width = 48;
+	line_no_rect.x = 8;
+	line_no_rect.y = 32;
 
 	int i;
 	i = 0;
 	while (i < 32)
 	{
-		GuiTextBox(lineNumberRect, (char *)TextFormat("%4d", c->line_no[i]), 18, 0);
-		lineNumberRect.y += lineNumberRect.height;
+		GuiButton(line_no_rect, (char *)TextFormat("%4d", c->line_no[i]));
+		line_no_rect.y += line_no_rect.height;
 		i++;
 	}
+}
+
+// void	draw_column_cursor_location(t_program *c)
+// {
+
+// }
+
+// void	draw_row_cursor_location(t_program *c)
+// {
+	
+// }
+
+void	draw_buttons(t_program *c)
+{
+	if (GuiButton((Rectangle){1024 - 75, md_val("P_19"), 75, 32}, "NPAGE"))
+	{
+
+	}
+	if (GuiButton((Rectangle){1024 - 75, md_val("P_20"), 75, 32}, "PPAGE"))
+	{
+
+	}
+	if (GuiButton((Rectangle){1024 - 75, md_val("P_21"), 75, 32}, "NVERS"))
+	{
+
+	}
+	if (GuiButton((Rectangle){1024 - 75, md_val("P_22"), 75, 32}, "PVERS"))
+	{
+
+	}
+	if (GuiButton((Rectangle){1024 - 75, md_val("P_23"), 75, 32}, "SAVEF"))
+	{
+
+	}
+
 }
