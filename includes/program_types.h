@@ -25,6 +25,20 @@ typedef	void					error;
 typedef void					none;
 typedef bool					witch;
 
+typedef struct s_rope_node
+{
+	i_H					*substring;
+	iP_1				length;
+	struct s_rope_node	*left;
+	struct s_rope_node	*right;
+} t_rope_node;
+
+typedef struct s_rope
+{
+	t_rope_node	*root;
+	iP_1		total_length;
+} t_rope;
+
 typedef struct s_program
 {	
 	i_P 		*line_no;
