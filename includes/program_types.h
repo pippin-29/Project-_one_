@@ -41,6 +41,7 @@ typedef struct s_rope
 
 typedef struct s_program
 {	
+	iP_1		in;
 	i_P 		*line_no;
 	i_P			cursor_x;
 	i_P			cursor_y;

@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <math.h>
 # include <raylib.h>
+# include <ctype.h>
 # include "program_macro.h"
 # include "program_types.h"
 # include "program_function.h"
