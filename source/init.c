@@ -22,7 +22,7 @@ void init_(t_program *c)
 
 none	init_line_no(t_program *c)
 {
-	i_P	ra;
+	int	ra;
 
 	ra = _A;
 	c->line_no = malloc(sizeof(int) * P_);
@@ -37,8 +37,8 @@ none	init_line_no(t_program *c)
 
 none	init_boxes(t_program *c)
 {
-	i_P row;
-	i_P col;
+	int row;
+	int col;
 
 	row = 0;
 	while (row < GRID_ROWS)
@@ -52,3 +52,4 @@ none	init_boxes(t_program *c)
 		row++;
 	}
 }
+

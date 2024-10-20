@@ -57,8 +57,8 @@ void	draw_buttons(t_program *c)
 
 none draw_boxes(t_program *c)
 {
-	i_P row;
-	i_P col;
+	int row;
+	int col;
 
 	row = 0;
 	while (row < GRID_ROWS)
@@ -69,7 +69,7 @@ none draw_boxes(t_program *c)
 			if (col == c->cursor_x && row == c->cursor_y)
 				DrawRectangleLinesEx(c->boxes[row][col], 1.0f, BLUE);
 			DrawRectangleRounded(c->boxes[row][col], 0.0f, 5, CLITERAL(Color){0, 0, 0, 96});
-			GuiDrawText("c", c->boxes[row][col], 1, BLACK);
+			GuiDrawText(" ", c->boxes[row][col], 1, BLACK);
 			col++;
 		}
 		row++;
