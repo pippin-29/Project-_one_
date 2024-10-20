@@ -21,6 +21,7 @@
 #define GRID_COLS	128
 #define RES_X		944
 #define RES_Y		666
+#define GAP_BUFFER	12
 
 // MD_SET MACROS
 #define _A		  1

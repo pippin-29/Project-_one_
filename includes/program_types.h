@@ -25,13 +25,6 @@ typedef	void					error;
 typedef void					none;
 typedef bool					witch;
 
-typedef struct s_line
-{
-	int				index;
-	char 			*page;
-	struct s_line 	*next;
-	struct s_line 	*prev;
-} t_line;
 
 typedef struct s_program
 {	
@@ -41,7 +34,8 @@ typedef struct s_program
 	int			cursor_x;
 	int			cursor_y;
 	Rectangle 	boxes[GRID_ROWS][GRID_COLS];
-	t_line		*line;
+	char		**page;
+	int			allocated_rows;
 
 } t_program;
 

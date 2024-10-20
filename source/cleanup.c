@@ -10,20 +10,11 @@
 
 #include "../includes/program.h"
 
-none	free_pages(t_line *root)
-{
-	if (root->next != NULL)
-	{
-		free_pages(root->next);
-	}
-	free(root->page);
-	free(root);
-}
-
 t_cleanup_function	cleanup(t_program *c)
 {
 	if (c->line_no)
 		free(c->line_no);
-	free_pages(c->line);
+	if (c->page)
+		dc_free_2d_i_H(c->page, c->allocated_rows);
 	free(c);
 }

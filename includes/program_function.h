@@ -25,13 +25,13 @@ none 	draw_boxes(t_program *c);
 none 	init_(t_program *c);
 none	init_line_no(t_program *c);
 none	init_boxes(t_program *c);
-none	init_line(t_program *c);
+none	init_page(t_program *c);
 
 // INPUT_C
 none	input_(t_program *c);
 
-// LINE_C
-t_line	*create_new_page(t_line *line);
+// PAGE_C
+
 
 
 // DANC_C

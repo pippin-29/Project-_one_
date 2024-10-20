@@ -18,7 +18,7 @@ void init_(t_program *c)
 	c->cursor_y = 0;
 	init_line_no(c);
 	init_boxes(c);
-	init_line(c);
+	init_page(c);
 
 }
 
@@ -55,18 +55,24 @@ none	init_boxes(t_program *c)
 	}
 }
 
-none	init_line(t_program *c)
+none	init_page(t_program *c)
 {
-	c->line = malloc(sizeof(t_line));
-	if (!c->line)
-		ERROR_MEM(c);
-	c->line->prev = NULL;
-	c->line->next = create_new_page(c->line);
-	c->line->index = 0;
-	c->line->page = malloc(sizeof(char) * (4096 + 1));
-	if (!c->line->page)
-		ERROR_MEM(c);
-	memset(c->line->page, 0, 4096 + 1);
+	c->page = malloc(sizeof(char *) * GRID_ROWS);
+	int i;
+
+	i = 0;
+	while (i < GRID_ROWS)
+	{
+		c->page[i] = malloc(sizeof(char *) * (GRID_COLS + GAP_BUFFER));
+		int q = 0;
+		while (q < GRID_COLS)
+		{
+			c->page[i][q] = '\0';
+			q++;
+		}
+		i++;
+	}
+	c->allocated_rows = GRID_ROWS;
 }
 
 	
