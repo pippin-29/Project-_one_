@@ -19,8 +19,8 @@ void	draw__one_(t_program *c)
 	DrawText("Project _one_", 1024 / 2, 8, 24, CLITERAL(Color){0, 0, 196, 96});
 
 	DrawRectangleRounded((Rectangle){0, 32, 944, 18 * 32}, 0.01f, 15, RAYWHITE);
-	DrawText(TextFormat("Column: %3d", c->cursor_x), 0, md_val("P_19"), 16, CLITERAL(Color){0, 0, 196, 96});
-	DrawText(TextFormat("Row: %3d", c->cursor_y), 0, md_val("_P20"), 16, CLITERAL(Color){0, 0, 196, 96});
+	DrawText(TextFormat("Column: %3d", c->cursor_x + 1), 0, md_val("P_19"), 16, CLITERAL(Color){0, 0, 196, 96});
+	DrawText(TextFormat("Row: %3d", c->cursor_y + 1), 0, md_val("_P20"), 16, CLITERAL(Color){0, 0, 196, 96});
 	
 	draw_line_numbers(c);
 	draw_buttons(c);
