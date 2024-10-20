@@ -44,7 +44,14 @@ none reallocate_page(t_program *c)
 	i = 0;
 	while (i < GRID_ROWS)
 	{
+		int q = 0;
 		c->page[i] = realloc(c->page[i], GRID_COLS + c->gap_size);
+		while (q < GRID_COLS + c->gap_size)
+		{
+			if (!isprint(c->page[i][q]))
+				c->page[i][q] = 0;
+			q++;
+		}
 		i++;
 	}
 }
