@@ -14,8 +14,8 @@
 void init_(t_program *c)
 {
 	InitWindow(RES_X, RES_Y, "Project _one_");
-	c->cursor_x = 1;
-	c->cursor_y = 1;
+	c->cursor_x = 0;
+	c->cursor_y = 0;
 	init_line_no(c);
 	init_boxes(c);
 }

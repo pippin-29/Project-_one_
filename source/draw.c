@@ -66,8 +66,10 @@ none draw_boxes(t_program *c)
 		col = 0;
 		while (col < GRID_COLS)
 		{
+			if (col == c->cursor_x && row == c->cursor_y)
+				DrawRectangleLinesEx(c->boxes[row][col], 1.0f, BLUE);
 			DrawRectangleRounded(c->boxes[row][col], 0.0f, 5, CLITERAL(Color){0, 0, 0, 96});
-			GuiDrawText("B", c->boxes[row][col], 1, BLACK);
+			GuiDrawText("c", c->boxes[row][col], 1, BLACK);
 			col++;
 		}
 		row++;
