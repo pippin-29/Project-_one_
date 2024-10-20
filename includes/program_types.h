@@ -43,6 +43,7 @@ typedef struct s_program
 {	
 	iP_1		in;
 	i_P 		*line_no;
+	Vector2		mouse_position;
 	i_P			cursor_x;
 	i_P			cursor_y;
 	Rectangle 	boxes[GRID_ROWS][GRID_COLS];
