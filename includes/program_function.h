@@ -26,6 +26,8 @@ none 	init_(t_program *c);
 none	init_line_no(t_program *c);
 none	init_boxes(t_program *c);
 
+// INPUT_C
+none	input_(t_program *c);
 
 
 // DANC_C
