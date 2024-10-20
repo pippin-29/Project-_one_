@@ -29,6 +29,9 @@ none	init_boxes(t_program *c);
 // INPUT_C
 none	input_(t_program *c);
 
+// ROPE_C
+none	*init_rope(t_program *c);
+
 
 // DANC_C
 iP_2				md_val(char *_x_);

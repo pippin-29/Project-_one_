@@ -25,28 +25,15 @@ typedef	void					error;
 typedef void					none;
 typedef bool					witch;
 
-typedef struct s_rope_node
-{
-	i_H					*substring;
-	iP_1				length;
-	struct s_rope_node	*left;
-	struct s_rope_node	*right;
-} t_rope_node;
-
-typedef struct s_rope
-{
-	t_rope_node	*root;
-	iP_1		total_length;
-} t_rope;
-
 typedef struct s_program
 {	
-	iP_1		in;
-	i_P 		*line_no;
+	int			in;
+	int 		*line_no;
 	Vector2		mouse_position;
-	i_P			cursor_x;
-	i_P			cursor_y;
+	int			cursor_x;
+	int			cursor_y;
 	Rectangle 	boxes[GRID_ROWS][GRID_COLS];
+	char		*line;
 
 } t_program;
 
