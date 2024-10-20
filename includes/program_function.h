@@ -16,15 +16,16 @@
 t_cleanup_function	cleanup(t_program *c);
 
 // DRAW_C
-void	draw__one_(t_program *c);
-void	draw_line_numbers(t_program *c);
-void	draw_buttons(t_program *c);
+none	draw__one_(t_program *c);
+none	draw_line_numbers(t_program *c);
+none	draw_buttons(t_program *c);
 none 	draw_boxes(t_program *c);
 
 // INIT_C
-void init_(t_program *c);
+none 	init_(t_program *c);
 none	init_line_no(t_program *c);
 none	init_boxes(t_program *c);
+
 
 
 // DANC_C
