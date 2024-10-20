@@ -18,6 +18,8 @@ void init_(t_program *c)
 	c->cursor_y = 0;
 	init_line_no(c);
 	init_boxes(c);
+	init_line(c);
+
 }
 
 none	init_line_no(t_program *c)
@@ -53,3 +55,18 @@ none	init_boxes(t_program *c)
 	}
 }
 
+none	init_line(t_program *c)
+{
+	c->line = malloc(sizeof(t_line));
+	if (!c->line)
+		ERROR_MEM(c);
+	c->line->prev = NULL;
+	c->line->next = create_new_page(c->line);
+	c->line->index = 0;
+	c->line->page = malloc(sizeof(char) * (4096 + 1));
+	if (!c->line->page)
+		ERROR_MEM(c);
+	memset(c->line->page, 0, 4096 + 1);
+}
+
+	
