@@ -36,6 +36,8 @@ typedef struct s_program
 	Rectangle 	boxes[GRID_ROWS][GRID_COLS];
 	char		**page;
 	int			allocated_rows;
+	int			gap_size;
+	int 		reacher;
 
 } t_program;
 

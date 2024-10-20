@@ -23,7 +23,7 @@ none	input_(t_program *c)
 	int key = GetCharPressed();
 	if(isprint(key))
 	{
-
+		add_char_to_page(c, key);
 	}
 	if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 	{
@@ -36,3 +36,36 @@ none	input_(t_program *c)
 		if (c->cursor_y > 31) c->cursor_y = 31;
 	}		
 }
+none reallocate_page(t_program *c)
+{
+	int i;
+	int q;
+
+	i = 0;
+	while (i < GRID_ROWS)
+	{
+		c->page[i] = realloc(c->page[i], GRID_COLS + c->gap_size);
+		i++;
+	}
+}
+none add_char_to_page(t_program *c, int key)
+{
+
+	c->page[c->cursor_y][c->cursor_x] = key;
+	
+	c->cursor_x += 1;
+	if (c->cursor_x > 127)
+	{
+		c->reacher += 1;
+		c->cursor_x == 127;
+	}
+		
+	if (c->reacher == c->gap_size - 1)
+	{
+		c->gap_size += c->gap_size;
+		reallocate_page(c);
+	}
+		
+
+}
+

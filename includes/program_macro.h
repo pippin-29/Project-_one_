@@ -22,6 +22,8 @@
 #define RES_X		944
 #define RES_Y		666
 #define GAP_BUFFER	12
+#define ROW			0
+#define COL			1
 
 // MD_SET MACROS
 #define _A		  1

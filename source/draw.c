@@ -68,7 +68,7 @@ none draw_boxes(t_program *c)
 		{
 			if (col == c->cursor_x && row == c->cursor_y)
 				DrawRectangleLinesEx(c->boxes[row][col], 1.0f, BLUE);
-			char *character = dc_strndup(&c->page[row][col], 1);
+			char *character = dc_strndup(&c->page[row][col + c->reacher], 1);
 			DrawRectangleRounded(c->boxes[row][col], 0.0f, 5, CLITERAL(Color){0, 0, 0, 96});
 			GuiDrawText(character, c->boxes[row][col], 1, BLACK);
 			free(character);

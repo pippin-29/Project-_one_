@@ -59,13 +59,13 @@ none	init_page(t_program *c)
 {
 	c->page = malloc(sizeof(char *) * GRID_ROWS);
 	int i;
-
+	c->gap_size = 12;
 	i = 0;
 	while (i < GRID_ROWS)
 	{
-		c->page[i] = malloc(sizeof(char *) * (GRID_COLS + GAP_BUFFER));
+		c->page[i] = malloc(sizeof(char) * (GRID_COLS + c->gap_size));
 		int q = 0;
-		while (q < GRID_COLS)
+		while (q < (GRID_COLS + c->gap_size))
 		{
 			c->page[i][q] = '\0';
 			q++;
@@ -73,6 +73,8 @@ none	init_page(t_program *c)
 		i++;
 	}
 	c->allocated_rows = GRID_ROWS;
+	
+	c->reacher = 0;
 }
 
 	

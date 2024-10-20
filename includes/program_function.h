@@ -29,6 +29,7 @@ none	init_page(t_program *c);
 
 // INPUT_C
 none	input_(t_program *c);
+none 	add_char_to_page(t_program *c, int key);
 
 // PAGE_C
 
