@@ -12,8 +12,15 @@
 
 none	input_(t_program *c)
 {
-	if ((IsKeyPressed(KEY_LEFT) || IsKeyPressedRepeat(KEY_LEFT))&& c->cursor_x > 0)
+	if (((IsKeyPressed(KEY_LEFT) || IsKeyPressedRepeat(KEY_LEFT)) && c->cursor_x > 0))
+	{
 		c->cursor_x -= 1;
+	} else if (c->reacher > 0 && c->cursor_x == 0)
+	{
+		c->reacher -= 1;
+		c->cursor_x == 0;
+	}
+		
     if ((IsKeyPressed(KEY_RIGHT) || IsKeyPressedRepeat(KEY_RIGHT)) && c->cursor_x < 127)
 		c->cursor_x += 1;  
     if ((IsKeyPressed(KEY_UP) || IsKeyPressedRepeat(KEY_UP)) && c->cursor_y > 0)
@@ -58,13 +65,13 @@ none reallocate_page(t_program *c)
 none add_char_to_page(t_program *c, int key)
 {
 
-	c->page[c->cursor_y][c->cursor_x] = key;
+	c->page[c->cursor_y][c->cursor_x + c->reacher] = key;
 	
 	c->cursor_x += 1;
 	if (c->cursor_x > 127)
 	{
 		c->reacher += 1;
-		c->cursor_x == 127;
+		c->cursor_x = 127;
 	}
 		
 	if (c->reacher == c->gap_size - 1)
