@@ -22,7 +22,18 @@ none	input_(t_program *c)
 	}
 		
     if ((IsKeyPressed(KEY_RIGHT) || IsKeyPressedRepeat(KEY_RIGHT)) && c->cursor_x < 127)
-		c->cursor_x += 1;  
+		c->cursor_x += 1;
+	else if ((IsKeyPressed(KEY_RIGHT) || IsKeyPressedRepeat(KEY_RIGHT)) && c->cursor_x >= 127 && c->reacher > 0)
+	{
+		c->reacher += 1;
+		c->cursor_x == 127;
+		if (c->reacher == c->gap_size - 1)
+		{
+			c->gap_size += c->gap_size;
+			reallocate_page(c);
+		}
+	}
+	
     if ((IsKeyPressed(KEY_UP) || IsKeyPressedRepeat(KEY_UP)) && c->cursor_y > 0)
         c->cursor_y -= 1;
     if ((IsKeyPressed(KEY_DOWN) || IsKeyPressedRepeat(KEY_DOWN)) && c->cursor_y < 31)
